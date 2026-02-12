@@ -73,8 +73,8 @@ body { margin: 0; background: #f4f6f9; display: flex; min-height: 100vh; }
     padding: 10px 14px;
     border-radius: 5px;
     color: white;
-    margin-left: 10px;
     transition: 0.3s;
+
 }
 
 .add-btn { background: #5b6bff; }
@@ -162,12 +162,30 @@ tbody tr:hover { background:#f0f0ff; }
 
 body { flex-direction: column; }
 
-.logo { text-align:left; padding-left:15px; }
+.logo { 
+  text-align:left; 
+  padding-left:15px;
+  transform: translateY(12px);
+ }
 
-.menu-toggle-label { display:flex; }
 
-.sidebar { width:100%; padding:10px; }
+.menu-toggle-label { 
+  display:flex; 
+}
 
+.sidebar { 
+  width:100%; 
+  padding:10px; 
+}   
+
+.actions a{
+  padding: 5px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  transform: translateY(8px);
+}
 .menu {
     display:none;
     flex-direction:column;
@@ -176,6 +194,12 @@ body { flex-direction: column; }
     left:0;
     width:100%;
     background:#4c35de;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 120px;
+  transform: translateY(12px);
 }
 
 
