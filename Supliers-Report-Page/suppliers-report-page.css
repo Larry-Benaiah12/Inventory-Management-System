@@ -1,0 +1,262 @@
+/* ===== GLOBAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    }
+    
+    body{
+    display:flex;
+    min-height:100vh;
+    background:#f3f4f6;
+    }
+    
+    /* ===== SIDEBAR ===== */
+    .sidebar{
+    width:230px;
+    background:#4c35de;
+    color:white;
+    padding:20px 0;
+    position:relative;
+    transition:0.3s;
+    }
+    
+    .logo{
+    transform: translateX(30px);
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:35px;
+    }
+    
+    .menu a{
+    display:block;
+    padding:14px 25px;
+    color:white;
+    text-decoration:none;
+    margin:4px 0;
+    border-radius:4px;
+    transition:0.3s;
+    }
+    
+    .menu a.active,
+    .menu a:hover{
+    background:#6366f1;
+    margin:6px 15px;
+    }
+    
+    /* ===== HAMBURGER ===== */
+    .menu-toggle-label{
+    display:none;
+    position:absolute;
+    top:20px;
+    right:20px;
+    cursor:pointer;
+    width:30px;
+    height:25px;
+    flex-direction:column;
+    justify-content:space-between;
+    }
+    
+    .menu-toggle-label span{
+    height:3px;
+    background:white;
+    display:block;
+    border-radius:2px;
+    }
+    
+    /* ===== MAIN ===== */
+    .main{
+    flex:1;
+    padding:25px;
+    }
+    
+    .page-title{
+    font-size:22px;
+    margin-bottom:25px;
+    font-weight:bold;
+    }
+    
+    /* ===== GRID ===== */
+    .dashboard-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    }
+    
+    /* ===== CARD ===== */
+    .card{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+    }
+    
+    .card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:15px;
+    }
+    
+    /* ===== SUPPLIER TABLE ===== */
+    .table-container{
+    overflow-x:auto;
+    }
+    
+    .suppliers-table{
+    width:100%;
+    border-collapse:collapse;
+    }
+    
+    .suppliers-table th{
+    background:#f9fafb;
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    }
+    
+    .suppliers-table td{
+    border-bottom:1px solid #eee;
+    padding:12px;
+    }
+    
+    .suppliers-table td:hover {
+    background: rgba(244, 244, 244, 0.8);
+    transition: 0.3s ease all;
+    }
+    .category-cell{
+    font-weight:bold;
+    background:#fafafa;
+    }
+    
+    /* ===== REPORT UI ===== */
+    .report-group{
+    margin-bottom:25px;
+    }
+    
+    .group-title{
+    font-size:11px;
+    letter-spacing:1px;
+    color:#9ca3af;
+    margin-bottom:12px;
+    font-weight:bold;
+    }
+    
+    .report-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px;
+    border-radius:12px;
+    transition:0.3s;
+    margin-bottom:10px;
+    }
+    
+    .report-item.border-box{
+    border:1px solid #e5e7eb;
+    }
+    
+    .report-item.border-box:hover{
+    background: rgba(244, 244, 244, 0.8);
+    transition: 0.3s ease all;
+    /* box-shadow:0 10px 25px rgba(79,70,229,0.18);
+    transform:translateY(-3px); */
+    }
+    
+    .file-info{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    }
+    
+    .file-logo{
+    width:38px;
+    height:38px;
+    transition:0.3s;
+    }
+    
+    .report-item:hover .file-logo{
+    transform:scale(1.1);
+    }
+    
+    .file-text{
+    display:flex;
+    flex-direction:column;
+    }
+    
+    .file-name{
+    font-size:14px;
+    font-weight:600;
+    }
+    
+    .file-meta{
+    font-size:11px;
+    color:#9ca3af;
+    }
+    
+    .report-actions{
+    display:flex;
+    gap:8px;
+    }
+    
+    .action-icon{
+    width:34px;
+    height:34px;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef2ff;
+    color:#4f46e5;
+    cursor:pointer;
+    transition:0.3s;
+    }
+    
+    .action-icon:hover{
+    background:#4f46e5;
+    color:white;
+    }
+    
+    /* ===== MOBILE ===== */
+    @media(max-width:768px){
+    
+    body{
+    flex-direction:column;
+    }
+    
+    .sidebar{
+    width:100%;
+    padding:10px;
+    }
+    
+    .logo{
+    text-align:left;
+    padding-left:15px;
+    transform: translateY(10px);
+    }
+    
+    .menu-toggle-label{
+    display:flex;
+    }
+    
+    .menu{
+    display:none;
+    flex-direction:column;
+    background:#4c35de;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    }
+    
+    .menu.show-menu{
+    display:flex;
+    }
+    
+    .dashboard-grid{
+    grid-template-columns:1fr;
+    }
+    
+    }

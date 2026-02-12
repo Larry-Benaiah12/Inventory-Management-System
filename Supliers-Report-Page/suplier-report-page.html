@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMS - Suppliers & Reports</title>
+
+<link rel="stylesheet" href="/Supliers-Report-Page/suppliers-report-page.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<div class="logo">IMS</div>
+
+<div class="menu-toggle-label" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="menu" id="menu">
+<a href="/Dashboard/dashboard.html">Dashboard</a>
+<a href="/PRODUCTS/products-page.html">Products</a>
+<a href="/Supliers-Report-Page/suplier-report-page.html" class="active">Suppliers & Reports</a>
+<a href="#">Account Settings</a>
+<a href="/SIgn-in-sign-up-page/login-logut-page.html">Log Out</a>
+</div>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<h2 class="page-title">Suppliers & Reports</h2>
+
+<div class="dashboard-grid">
+
+<!-- SUPPLIERS -->
+<div class="card">
+<div class="card-header">
+<span>Suppliers</span>
+<i class="fas fa-users"></i>
+</div>
+
+<div class="table-container">
+<table class="suppliers-table">
+<tr>
+<th>Category</th>
+<th>Suppliers</th>
+</tr>
+
+<tr>
+<td class="category-cell">Furniture</td>
+<td>WoodLove GH, Urban Craft GH</td>
+</tr>
+
+<tr>
+<td class="category-cell">Fashion</td>
+<td>Ivory Thread Ltd, NovaWear</td>
+</tr>
+
+<tr>
+<td class="category-cell">Electronics</td>
+<td>NextGen Devices, Tekify Nest</td>
+</tr>
+
+</table>
+</div>
+</div>
+
+<!-- REPORTS -->
+<div class="card">
+
+<div class="card-header">
+<span>Reports</span>
+<i class="fas fa-chart-line"></i>
+</div>
+
+<!-- NEW -->
+<div class="report-group">
+<div class="group-title">THIS WEEK</div>
+
+<div class="report-item border-box">
+
+<div class="file-info">
+<img src="https://i.pinimg.com/736x/83/fe/22/83fe2289e31398d96e8e6ed9d603c72f.jpg" class="file-logo">
+
+<div class="file-text">
+<span class="file-name">Employees Meeting</span>
+<span class="file-meta">1.4MB • Updated 2 days ago</span>
+</div>
+</div>
+
+<div class="report-actions">
+<div class="action-icon"><i class="fas fa-eye"></i></div>
+<div class="action-icon"><i class="fas fa-download"></i></div>
+</div>
+
+</div>
+
+<div class="report-item border-box">
+
+<div class="file-info">
+<img src="https://i.pinimg.com/736x/83/fe/22/83fe2289e31398d96e8e6ed9d603c72f.jpg" class="file-logo">
+
+<div class="file-text">
+<span class="file-name">Year Financial Report</span>
+<span class="file-meta">3.2MB • Updated 1 week ago</span>
+</div>
+</div>
+
+<div class="report-actions">
+<div class="action-icon"><i class="fas fa-eye"></i></div>
+<div class="action-icon"><i class="fas fa-download"></i></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- URGENT -->
+<div class="report-group">
+<div class="group-title">URGENT</div>
+
+<div class="report-item border-box">
+
+<div class="file-info">
+<img src="https://cdn-icons-png.flaticon.com/512/595/595067.png" class="file-logo">
+
+<div class="file-text">
+<span class="file-name">Low Stock Items</span>
+<span class="file-meta">Requires Attention</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- OLD -->
+<div class="report-group">
+<div class="group-title">OLD</div>
+
+<div class="report-item">
+
+<div class="file-info">
+<img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" class="file-logo">
+
+<div class="file-text">
+<span class="file-name">2024 Transactions</span>
+<span class="file-meta">Archived</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- HAMBURGER SCRIPT -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.onclick = () => {
+menu.classList.toggle("show-menu");
+};
+
+document.addEventListener("click", function(e){
+if(!menu.contains(e.target) && !hamburger.contains(e.target)){
+menu.classList.remove("show-menu");
+}
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMS - Add Product</title>
+    <link rel="stylesheet" href="/PRODUCTS/add-products.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+
+<div class="logo">IMS</div>
+
+<div class="menu-toggle-label" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="menu" id="menu">
+<a href="/Dashboard/dashboard.html">Dashboard</a>
+<a href="/PRODUCTS/products-page.html" class="active">Products</a>
+<a href="/Supliers-Report-Page/suplier-report-page.html">Suppliers & Reports</a>
+<a href="index.html">Log Out</a>
+</div>
+
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="main">
+
+<form class="workspace">
+
+<header class="top-nav">
+
+<div class="back-btn">
+<a href="http://127.0.0.1:5500/PRODUCTS/products-page.html"><i class="fas fa-arrow-left"></i> Back to Products</a>
+</div>
+
+<div>
+<a href="http://127.0.0.1:5500/PRODUCTS/products-page.html" type="submit" class="publish">Publish</a>
+
+<a href="#" class="discard">Discard</a>
+</div>
+
+</header>
+
+<h2>Add Product</h2>
+
+<div class="grid-content">
+
+<!-- LEFT -->
+<div>
+
+<div class="card">
+<h3>Product Details</h3>
+
+<label>Product Name</label>
+<input type="text">
+
+<label>Product ID</label>
+<input type="text">
+
+<label>Category</label>
+<input type="text">
+
+</div>
+
+<div class="card">
+<h3>Inventory and Pricing</h3>
+
+<label>Selling Price</label>
+<input type="number">
+
+<label>Quantity</label>
+<input type="number">
+
+<label>Supplier</label>
+<input type="text">
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div>
+
+<div class="card">
+<h3>Product Description</h3>
+<textarea></textarea>
+</div>
+
+<div class="card">
+<h3>Upload Product Images</h3>
+
+<div class="upload-area">
+
+<label class="drop-box">
+<i class="far fa-image"></i>
+<input type="file" id="image1" name="image1" accept="image/*" hidden>
+Image 1
+</label>
+
+<label class="drop-box">
+<i class="far fa-image"></i>
+<input type="file" id="image2" name="image2" accept="image/*" hidden>
+Image 2
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</form>
+</div>
+
+<!-- ===== HAMBURGER JS ===== -->
+<script>
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.onclick = () => {
+menu.classList.toggle("show-menu");
+};
+
+document.addEventListener("click", function(e){
+
+if(!menu.contains(e.target) && !hamburger.contains(e.target)){
+menu.classList.remove("show-menu");
+}
+
+});
+
+</script>
+
+</body>
+</html>
+
+
+
+<!-- <script>
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.onclick = () => {
+menu.classList.toggle("show-menu");
+};
+
+document.addEventListener("click", function(e){
+
+if(!menu.contains(e.target) && !hamburger.contains(e.target)){
+menu.classList.remove("show-menu");
+}
+
+});
+
+</script>
+
+-->

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/SIgn-in-sign-up-page/login-logout-page.css" />
+<title>IMS | Login Page</title>
+
+
+</head>
+
+<body>
+
+<input type="checkbox" id="toggle">
+
+<!-- ===== SIGN IN ===== -->
+<div class="auth-wrapper signin-form">
+  <h2>Sign In</h2>
+
+  <input type="email" placeholder="Email" required>
+  <input type="password" placeholder="Password" required>
+
+  <a href="/Dashboard/dashboard.html" class="btn-link">Login</a>
+
+  <div class="divider">OR</div>
+
+  <div class="social-login">
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">Sign in with Google</a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook">Sign in with Facebook</a>
+  </div>
+
+  <div class="toggle-text">
+    Don't have an account? <label for="toggle">Sign Up</label>
+  </div>
+</div>
+
+<!-- ===== SIGN UP ===== -->
+<div class="auth-wrapper signup-form">
+  <h2>Create Account</h2>
+
+  <input type="text" placeholder="Full Name" required>
+  <input type="email" placeholder="Email" required>
+  <input type="password" placeholder="Password" required>
+  <input type="password" placeholder="Confirm Password" required>
+
+  <a href="/SIgn-in-sign-up-page/login-logut-page.html" class="btn-link">Register</a>
+
+  <div class="toggle-text">
+    Already have an account? <label for="toggle">Sign In</label>
+  </div>
+</div>
+
+</body>
+</html>

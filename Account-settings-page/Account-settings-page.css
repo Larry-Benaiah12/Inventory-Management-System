@@ -1,0 +1,258 @@
+/* ===== GENERAL ===== */
+* { 
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; 
+}
+
+body { 
+    margin: 0; 
+    background: #f4f6f9; 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 230px;
+    background: #4c35de;
+    color: #fff;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.logo { 
+    font-size: 26px; 
+    font-weight: bold; 
+    margin-bottom: 35px; 
+    transform: translateX(30px);
+}
+
+/* SIDEBAR MENU */
+.menu a {
+    display: block;
+    padding: 14px 25px;
+    color: #fff;
+    text-decoration: none;
+    margin: 4px 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu a.active,
+.menu a:hover {
+    background: #6366f1;
+    color: #fff;
+    margin: 6px 15px;
+}
+
+/* Hamburger */
+.menu-toggle { display: none; }
+.menu-toggle-label {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+
+/* ===== MAIN ===== */
+.main { 
+    flex: 1; 
+    padding: 20px; 
+    overflow-y: auto; 
+}
+
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.user-profile { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.avatar { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    margin-bottom: 5px; 
+    transition: transform 0.3s ease; 
+}
+
+.avatar:hover { 
+    transform: scale(1.1) rotate(5deg); 
+}
+
+
+
+
+
+
+
+
+
+/* ===== ACCOUNT SETTINGS MAIN PAGE ===== */
+.account-main {
+    display: flex;
+    gap: 30px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* LEFT PROFILE NAV */
+.account-nav {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.account-nav a {
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #333;
+    transition: 0.3s;
+}
+.account-nav a.active,
+.account-nav a:hover {
+    background: #6366f1;
+    color: #fff;
+}
+
+/* RIGHT FORM AREA */
+.account-form {
+    flex: 3;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* AVATAR SECTION */
+.avatar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.avatar-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* FORM STYLING */
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.form-row { 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.form-group { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.form-group label { 
+    margin-bottom: 6px; 
+    font-weight: 500; 
+    color: #333; 
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #6366f1;
+}
+
+/* Gender radios */
+.gender-group { display: flex; gap: 15px; align-items: center; }
+
+/* Phone input */
+.phone-input { display: flex; align-items: center; gap: 10px; }
+.country-flag { padding: 10px; background: #e0e0e0; border-radius: 8px; font-weight: 500; }
+
+/* Full width inputs */
+.full-width { width: 100%; }
+
+/* Buttons */
+.btn { border: none; cursor: pointer; font-weight: 600; border-radius: 8px; padding: 10px 18px; transition: all 0.3s ease; }
+.btn-primary { background: #6366f1; color: #fff; }
+.btn-primary:hover { background: #4c35de; }
+.btn-secondary { background: #e0e0e0; color: #333; }
+.btn-secondary:hover { background: #c0c0c0; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp { from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+} to { 
+    opacity: 1; 
+    transform: translateY(0); 
+} 
+}
+
+@keyframes fadeInNumber { from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+} to { 
+    opacity: 1; 
+    transform: translateY(0); 
+} 
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .account-main { flex-direction: column; }
+}
+
+@media (max-width: 550px) {
+    body { flex-direction: column; }
+    
+    .logo {
+        transform: translateY(10px);
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    .menu-toggle-label { display: flex; }
+    .sidebar { width: 100%; padding: 10px; position: relative; }
+    .menu { display: none; flex-direction: column; background: #4c35de; position: absolute; top: 60px; left: 0; width: 100%; z-index: 998; }
+    .menu a { margin: 0; padding: 14px 25px; }
+    .menu-toggle:checked + .menu-toggle-label + .menu { display: flex; }
+}

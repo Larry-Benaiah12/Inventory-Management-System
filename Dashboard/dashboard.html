@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/Dashboard/dashboard.css">
+
+<title>IMS Dashboard</title>
+
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="logo">IMS</div>
+
+    <!-- Hamburger toggle -->
+    <input type="checkbox" class="menu-toggle" id="menu-toggle">
+    <label for="menu-toggle" class="menu-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <div class="menu">
+        <a href="/Dashboard/dashboard.html" class="active">Dashboard</a>
+        <a href="/PRODUCTS/products-page.html">Products</a>
+        <a href="/Supliers-Report-Page/suplier-report-page.html">Suppliers & Reports</a>
+        <a href="/Account-settings-page/Account-settings-page.html">Account Settings</a>
+        <a href="index.html">Log Out</a>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+    <header class="header">
+        <h1>Dashboard</h1>
+        <div class="user-profile">
+            <img src="https://i.pravatar.cc/40" alt="Admin" class="avatar">
+            <span style="font-size: 0.8rem; font-weight: bold; color: #4c35de;">Admin</span>
+        </div>
+    </header>
+
+    <!-- STATS CARDS -->
+    <div class="stats-grid">
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/66/ed/0c/66ed0c3eafee51e3757ca926b5aa2058.jpg" class="card-icon" alt="products">
+            <div class="card-info">
+                <span class="card-label">Total Products</span>
+                <span class="card-value">
+                    <span>3</span><span>0</span><span>5</span>
+                </span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/ac/bf/ab/acbfab20512d6153ead680352a1ac86a.jpg" class="card-icon" alt="low stock">
+            <div class="card-info">
+                <span class="card-label">Low Stock</span>
+                <span class="card-value">
+                    <span>0</span><span>2</span><span>0</span>
+                </span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/c5/7c/66/c57c66753c18592ea54c5d041f060006.jpg" class="card-icon" alt="suppliers">
+            <div class="card-info">
+                <span class="card-label">Suppliers</span>
+                <span class="card-value">
+                    <span>1</span><span>6</span><span>9</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <h2 class="section-title">New Arrivals</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Supplier</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Laptop</td><td>Electronics</td><td>NextGen Devices</td><td>20</td></tr>
+                <tr><td>Chair</td><td>Furniture</td><td>Urban Craft GH</td><td>100</td></tr>
+                <tr><td>Printer</td><td>Office</td><td>Office Nest Ltd</td><td>79</td></tr>
+                <tr><td>Note Book A5</td><td>Office/School</td><td>Office Nest Ltd</td><td>970</td></tr>
+                <tr><td>Portable Shelf</td><td>Furniture</td><td>Oat & Steel Furnishings</td><td>250</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ===== HAMBURGER JS ===== -->
+<script>
+
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+    
+    hamburger.onclick = () => {
+    menu.classList.toggle("show-menu");
+    };
+    
+    document.addEventListener("click", function(e){
+    
+    if(!menu.contains(e.target) && !hamburger.contains(e.target)){
+    menu.classList.remove("show-menu");
+    }
+    
+    });
+
+</script>
+
+</body>
+</html>
