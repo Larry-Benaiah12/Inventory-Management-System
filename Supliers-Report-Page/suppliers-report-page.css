@@ -11,40 +11,41 @@
     min-height:100vh;
     background:#f3f4f6;
     }
-    
-    /* ===== SIDEBAR ===== */
-    .sidebar{
-    width:230px;
+
+  /* ===== SIDEBAR ===== */
+  .sidebar{
+    width:300px;
     background:#4c35de;
     color:white;
     padding:20px 0;
     position:relative;
-    transition:0.3s;
-    }
-    
-    .logo{
-    transform: translateX(30px);
+  }
+  
+  .logo{
+    padding-left:30px;
     font-size:26px;
     font-weight:bold;
-    margin-bottom:35px;
-    }
-    
-    .menu a{
+    margin-bottom:30px;
+    transform: translateY(10px);
+  }
+  
+  /* ===== MENU ===== */
+  .menu a{
     display:block;
     padding:14px 25px;
     color:white;
     text-decoration:none;
-    margin:4px 0;
-    border-radius:4px;
+    margin:10px 0;
     transition:0.3s;
-    }
-    
-    .menu a.active,
-    .menu a:hover{
-    background:#6366f1;
-    margin:6px 15px;
-    }
-    
+  }
+  
+  .menu a.active,
+  .menu a:hover{
+    background:#fff;
+    color: #4c35de;
+    font-weight: 600;
+    /* margin:6px 15px; */
+  }
     /* ===== HAMBURGER ===== */
     .menu-toggle-label{
     display:none;
@@ -258,5 +259,6 @@
     .dashboard-grid{
     grid-template-columns:1fr;
     }
+
     
     }

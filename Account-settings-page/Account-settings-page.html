@@ -3,146 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMS | Settings</title>
+
 <link rel="stylesheet" href="/Account-settings-page/Account-settings-page.css">
-<title>IMS Account Settings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+
 </head>
+
 <body>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-    <div class="logo">IMS</div>
 
-    <!-- Hamburger toggle -->
-    <input type="checkbox" class="menu-toggle" id="menu-toggle">
-    <label for="menu-toggle" class="menu-toggle-label">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
+  <div class="logo">IMS</div>
 
-    <div class="menu">
-        <a href="/Dashboard/dashboard.html">Dashboard</a>
-        <a href="/PRODUCTS/products-page.html">Products</a>
-        <a href="/Supliers-Report-Page/suplier-report-page.html">Suppliers & Reports</a>
-        <a href="/Account-settings-page/Account-settings-page.html" class="active">Account Settings</a>
-        <a href="index.html">Log Out</a>
-    </div>
+  <div class="menu-toggle-label" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="menu" id="menu">
+    <a href="/Dashboard/dashboard.html" >Dashboard</a>
+    <a href="/PRODUCTS/add-products.html">Products</a>
+    <a href="/Supliers-Report-Page/suplier-report-page.html">Suppliers & Reports</a>
+    <a href="/Account-settings-page/Account-settings-page.html" class="active">Account Settings</a>
+    <a href="/index.html">Log Out</a>
+  </div>
+
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
-    <!-- HEADER -->
-    <header class="header">
-        <h1>Account Settings</h1>
-        <div class="user-profile">
-            <img src="https://i.pravatar.cc/40" alt="Admin" class="avatar">
-            <span style="font-size: 0.8rem; font-weight: bold; color: #4c35de;">Admin</span>
-        </div>
-    </header>
+  <h2 class="page-title">Settings</h2>
 
-    <!-- ACCOUNT SETTINGS MAIN -->
-    <div class="account-main">
+  <div class="settings-container">
 
-        <!-- LEFT PROFILE NAV -->
-        <aside class="account-nav">
-            <a href="#" class="active">Profile Settings</a>
-            <a href="#">Password</a>
-            <a href="#">Notifications</a>
-            <a href="#">Verification</a>
-        </aside>
-
-        <!-- RIGHT FORM AREA -->
-        <section class="account-form">
-
-            <!-- AVATAR SECTION -->
-            <div class="avatar-wrapper">
-                <img src="https://i.pinimg.com/736x/a1/3f/e5/a13fe593cd044397afc8ce5d47598333.jpg" alt="User Avatar" class="avatar-large">
-                <div class="avatar-actions">
-                    <button class="btn btn-primary">Upload New</button>
-                    <button class="btn btn-secondary">Remove image</button>
-                </div>
-            </div>
-
-            <!-- FORM -->
-            <form>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name *</label>
-                        <input type="text" placeholder="First name">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name *</label>
-                        <input type="text" placeholder="Last name">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="examples@gmail.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Mobile Number *</label>
-                        <div class="phone-input">
-                            <span class="country-flag">🇳🇬</span>
-                            <input type="tel" placeholder="0806 123 7890">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group gender-group">
-                        <label>Gender</label>
-                        <label><input type="radio" name="gender"> Male</label>
-                        <label><input type="radio" name="gender"> Female</label>
-                    </div>
-                    <div class="form-group">
-                        <label>ID</label>
-                        <input type="text" placeholder="1559 000 7788 8DER" disabled>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Tax Identification Number</label>
-                        <input type="text" placeholder="examples@gmail.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Tax Identification Country</label>
-                        <div class="phone-input">
-                            <span class="country-flag">🇳🇬</span>
-                            <input type="text" placeholder="Nigeria" disabled>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group full-width">
-                    <label>Residential Address</label>
-                    <textarea placeholder="Ib street, Orogun, Ibadan"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary full-width">Save Changes</button>
-            </form>
-
-        </section>
+    <!-- TABS -->
+    <div class="settings-tabs">
+      <div class="tab active"><i class="fa-regular fa-user"></i> Profile</div>
+      <a href="#" class="tab"><i class="fa fa-lock"></i> Password</a>
+      <a href="#" class="tab"><i class="fa fa-bell"></i> Notification</a>
+      <a href="#" class="tab"><i class="fa fa-check"></i> Verification</a>
     </div>
+
+    <!-- CONTENT -->
+    <div class="settings-content">
+
+      <div class="profile-section">
+
+        <div class="avatar-wrapper">
+          <img src="https://i.pinimg.com/736x/3c/ae/07/3cae079ca0b9e55ec6bfc1b358c9b1e2.jpg" id="profilePreview" class="avatar">
+
+          <input type="file" id="imageUpload" accept="image/*" hidden>
+
+          <label for="imageUpload" class="camera-icon">
+            <i class="fa fa-camera"></i>
+          </label>
+        </div>
+
+        <div class="photo-actions">
+          <label for="imageUpload" class="btn primary">Upload New</label>
+          <button type="button" class="btn outline" onclick="removePhoto()">Delete Photo</button>
+        </div>
+
+      </div>
+
+      <form>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" placeholder="First name">
+          </div>
+
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" placeholder="Last name" required>
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="example@gmail.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>Telephone Number *</label>
+            <input type="text" placeholder="+233 529 256 789" required>
+          </div>
+
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+              <label><input type="radio" name="gender" required> Male</label>
+              <label><input type="radio" name="gender" required> Female</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Nationality</label>
+            <input type="text" value="Ghanaian" required>
+          </div>
+
+          <div class="form-group full">
+            <label>Residential Address</label>
+            <textarea placeholder="Street, City - Country" required></textarea>
+          </div>
+
+        </div>
+
+        <button class="save-btn">Save Changes</button>
+
+      </form>
+
+    </div>
+  </div>
 </div>
 
-<!-- ===== HAMBURGER JS ===== -->
 <script>
-const hamburger = document.getElementById("menu-toggle");
-const menu = document.querySelector(".menu");
 
-hamburger.onclick = () => {
-    menu.classList.toggle("show-menu");
-};
+/* ===== HAMBURGER ===== */
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", function(e){
+  e.stopPropagation();
+  menu.classList.toggle("show-menu");
+});
 
 document.addEventListener("click", function(e){
-    if(!menu.contains(e.target) && !hamburger.contains(e.target)){
-        menu.classList.remove("show-menu");
-    }
+  if(!menu.contains(e.target) && !hamburger.contains(e.target)){
+    menu.classList.remove("show-menu");
+  }
 });
+
+/* ===== IMAGE UPLOAD ===== */
+const uploadInput = document.getElementById("imageUpload");
+const preview = document.getElementById("profilePreview");
+
+uploadInput.addEventListener("change", function(){
+  const file = this.files[0];
+  if(file){
+    preview.src = URL.createObjectURL(file);
+  }
+});
+
+function removePhoto(){
+  preview.src = "https://i.pinimg.com/736x/3c/ae/07/3cae079ca0b9e55ec6bfc1b358c9b1e2.jpg";
+  uploadInput.value = "";
+}
+
 </script>
 
 </body>

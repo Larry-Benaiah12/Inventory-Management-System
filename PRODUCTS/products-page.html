@@ -1,185 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/PRODUCTS/products-page.css">
-<title>IMS - Products</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/PRODUCTS/products-page.css">
+    <title>IMS | Products</title>
+<style>
+    
+/* ===== RESET & GENERAL ===== */
+* { 
+
+box-sizing: border-box; 
+font-family: Arial, sans-serif; 
+}
+
+body { 
+margin: 0; 
+background: #f4f6f9; 
+display: flex; 
+min-height: 100vh; 
+}
 
 
+/* ===== SIDEBAR ===== */
+.sidebar {
+width: 300px;
+background: #4c35de;
+color: white;
+padding: 20px 0;
+position: relative;
+}
+.logo {
+padding-left: 30px;
+font-size: 26px;
+font-weight: bold;
+margin-bottom: 30px;
+transform: translateY(10px);
+}
+.menu a {
+display: block;
+padding: 14px 25px;
+color: white;
+text-decoration: none;
+margin: 10px 0;
+transition: 0.3s;
+}
+.menu a.active,
+.menu a:hover {
+background: #fff;
+color: #4c35de;
+font-weight: 600;
+}
+
+/* ===== HAMBURGER ===== */
+.menu-toggle-label {
+display: none;
+position: absolute;
+top: 20px;
+right: 20px;
+cursor: pointer;
+width: 30px;
+height: 25px;
+flex-direction: column;
+justify-content: space-between;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.menu-toggle-label span {
+height: 3px;
+width: 100%;
+background: #fff;
+display: block;
+}
+
+/* ===== MAIN ===== */
+.main { 
+flex: 1; 
+padding: 20px; 
+}
+
+.top-bar { 
+display: flex; 
+justify-content: space-between; 
+align-items: center; 
+margin-bottom: 20px; 
+}
+
+.actions a {
+text-decoration: none;
+padding: 10px 14px;
+border-radius: 5px;
+color: white;
+transition: 0.3s;
+}
+.add-btn { 
+background: #5b6bff; 
+}
+
+.del-btn { 
+background: #ff5b5b; 
+}
+
+.add-btn:hover { 
+background: #404eff; }
+
+.del-btn:hover { background: #e04444; }
+
+
+/* ===== CARD ===== */
+.card {
+background: #fff;
+border-radius: 8px;
+padding: 15px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+animation: fadeInUp 0.6s ease;
+}
+.card-header { 
+display: flex; 
+justify-content: space-between; 
+margin-bottom: 15px; 
+}
+
+.search-box input {
+padding: 7px 12px;
+border-radius: 20px;
+border: 1px solid #ccc;
+}
+
+/* ===== TABLE ===== */
+.table-wrapper { 
+    overflow-x: auto; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    min-width: 900px; 
+}
+
+th, td { 
+    padding: 12px; 
+    border-bottom: 1px solid #eee; 
+    text-align: left; 
+}
+
+th { 
+    background: #efefff; 
+    color: #777; 
+}
+
+.product-name { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.product-img { 
+    width: 34px; 
+    height: 34px; 
+    border-radius: 4px; 
+    object-fit: cover; 
+}
+
+.status.active { 
+    color: green; 
+    font-weight: bold; 
+}
+
+.status.draft { 
+    color: orange; 
+    font-weight: bold; 
+}
+.status.scheduled { 
+    color: #4b5cf0; 
+    font-weight: bold; 
+}
+
+tbody tr { opacity: 0; animation: fadeInUp 0.5s ease forwards; }
+tbody tr:nth-child(1){animation-delay:.1s;}
+tbody tr:nth-child(2){animation-delay:.2s;}
+tbody tr:nth-child(3){animation-delay:.3s;}
+
+tbody tr:hover { 
+    background:#f0f0ff; 
+}
+
+
+/* ===== ANIMATION ===== */
+@keyframes fadeInUp { 
+    
+    from { 
+    
+        opacity:0; transform: translateY(20px); 
+}
+     to { opacity:1; transform: translateY(0); 
+    } 
+}
+
+
+/* ===== MEDIA ===== */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        position: relative;  /* important to keep in flow */
+    }
+
+    .menu-toggle-label {
+        display: flex;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+
+    /* menu in normal flow, pushes content down */
+    .menu {
+        display: none;        /* hidden by default */
+        flex-direction: column;
+        width: 100%;
+        background: #4c35de;
+        margin-top: 10px;
+        
+    }
+
+    .menu.show-menu {
+        display: block;       /* show menu, pushes main */
+    }
+
+    .main {
+        padding: 20px;
+        flex: none;           /* important! so main does not try to stay in row */
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .actions a {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+
+
+</style>
 </head>
 
 <body>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
+    <div class="logo">IMS</div>
 
-<div class="logo">IMS</div>
+    <div class="menu-toggle-label" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-<input type="checkbox" id="menu-toggle" class="menu-toggle">
-
-<label for="menu-toggle" class="menu-toggle-label">
-<span></span>
-<span></span>
-<span></span>
-</label>
-
-<div class="menu">
-<a href="/Dashboard/dashboard.html">Dashboard</a>
-<a href="/PRODUCTS/products-page.html" class="active">Products</a>
-<a href="/Supliers-Report-Page/suplier-report-page.html">Suppliers & Reports</a>
-<a href="/Account-settings-page/Account-settings-page.html">Account Settings</a>
-<a href="index.html">Log Out</a>
-</div>
-
+    <div class="menu" id="menu">
+        <a href="/Dashboard/dashboard.html">Dashboard</a>
+        <a href="/PRODUCTS/products-page.html" class="active">Products</a>
+        <a href="/Supliers-Report-Page/suplier-report-page.html">Suppliers & Reports</a>
+        <a href="/Account-settings-page/Account-settings-page.html">Account Settings</a>
+        <a href="/index.html">Log Out</a>
+    </div>
 </div>
 
 <!-- MAIN -->
 <div class="main">
+    <div class="top-bar">
+        <h2>Products</h2>
+        <div class="actions">
+            <a href="/PRODUCTS/add-products.html" class="add-btn">+ Add Product</a>
+            <a href="#" class="del-btn">Delete Product</a>
+        </div>
+    </div>
 
-<div class="top-bar">
-<h2>Products</h2>
-
-<div class="actions">
-<a href="/PRODUCTS/add-products.html" class="add-btn">+ Add Product</a>
-<a href="#" class="del-btn">Delete Product</a>
-</div>
-</div>
-
-<div class="card">
-
-<div class="card-header">
-<h3>Products List</h3>
-<div class="search-box">
-<input type="text" placeholder="Search list">
-</div>
-</div>
-
-<div class="table-wrapper">
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Product Name</th>
-<th>Category</th>
-<th>Price</th>
-<th>Stock</th>
-<th>Supplier</th>
-<th>Status</th>
-</tr>
-</thead>
-
-<tbody>
-
-<!-- Macbook Air -->
-<tr>
-<td><input type="checkbox"></td>
-<td class="product-name">
-<img class="product-img" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=80">
-Macbook Air
-</td>
-<td>Electronics</td>
-<td>$1,205</td>
-<td>70</td>
-<td>NextGen Devices</td>
-<td class="status scheduled">Scheduled</td>
-</tr>
-
-<!-- King-size Bed image -->
-<tr>
-<td><input type="checkbox"></td>
-<td class="product-name">
-<img class="product-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=80">
-King-size Bed
-</td>
-<td>Furniture</td>
-<td>$270</td>
-<td>6</td>
-<td>Oat&Steel Furniture</td>
-<td class="status active">Active</td>
-</tr>
-
-<!-- Cushion Chair image -->
-<tr>
-<td><input type="checkbox"></td>
-<td class="product-name">
-<img class="product-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=80">
-Cushion Chair
-</td>
-<td>Furniture</td>
-<td>$72.99</td>
-<td>69</td>
-<td>WoodLove GH</td>
-<td class="status draft">Draft</td>
-</tr>
-
-<!-- Printer image -->
-<tr>
-<td><input type="checkbox"></td>
-<td class="product-name">
-<img class="product-img" src="https://i.pinimg.com/1200x/a3/28/2d/a3282d85b6dc8a0a41386e9ec1397bf8.jpg">
-Printer
-</td>
-<td>Office</td>
-<td>$821</td>
-<td>100</td>
-<td>Tekify Nest</td>
-<td class="status draft">Draft</td>
-</tr>
-
-<!-- Kids TAblet image -->
-<tr>
-<td><input type="checkbox"></td>
-<td class="product-name">
-<img class="product-img" src="https://i.pinimg.com/1200x/e3/3a/28/e33a283fa320e2bc959d85aa5a10fbdc.jpg">
-Kids Tablet
-</td>
-<td>Electronics</td>
-<td>$500</td>
-<td>250</td>
-<td>Tekify Nest</td>
-<td class="status active">Active</td>
-</tr>
-
-<!-- Laptop image -->
-<tr>
-<td><input type="checkbox"></td>
-<td class="product-name">
-<img class="product-img" src="https://i.pinimg.com/736x/a5/7f/79/a57f7940a24d9ddbbe2aa4e72f5c48f5.jpg">
- Laptop
-</td>
-<td>Electronics</td>
-<td>$1500</td>
-<td>300</td>
-<td>James Nest</td>
-<td class="status active">Active</td>
-</tr>
-
-</tbody>
-
-</table>
-</div>
-</div>
+    <div class="card">
+        <div class="card-header">
+            <h3>Products List</h3>
+            <div class="search-box">
+                <input type="text" placeholder="Search list">
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Supplier</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="product-name"><img class="product-img" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=80"> Macbook Air</td>
+                        <td>Electronics</td>
+                        <td>$1,205</td>
+                        <td>70</td>
+                        <td>NextGen Devices</td>
+                        <td class="status scheduled">Scheduled</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="product-name"><img class="product-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=80"> King-size Bed</td>
+                        <td>Furniture</td>
+                        <td>$270</td>
+                        <td>6</td>
+                        <td>Oat&Steel Furniture</td>
+                        <td class="status active">Active</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="product-name">
+                            <img class="product-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=80">
+                            Cushion Chair
+                        </td>
+                        <td>Furniture</td>
+                        <td>$72.99</td>
+                        <td>69</td>
+                        <td>WoodLove GH</td>
+                        <td class="status draft">Draft</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="product-name">
+                            <img class="product-img" src="https://i.pinimg.com/1200x/a3/28/2d/a3282d85b6dc8a0a41386e9ec1397bf8.jpg">
+                            Printer
+                        </td>
+                        <td>Office</td>
+                        <td>$821</td>
+                        <td>100</td>
+                        <td>Tekify Nest</td>
+                        <td class="status draft">Draft</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="product-name">
+                            <img class="product-img" src="https://i.pinimg.com/1200x/e3/3a/28/e33a283fa320e2bc959d85aa5a10fbdc.jpg">
+                            Kids Tablet
+                        </td>
+                        <td>Electronics</td>
+                        <td>$500</td>
+                        <td>250</td>
+                        <td>Tekify Nest</td>
+                        <td class="status active">Active</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="product-name">
+                            <img class="product-img" src="https://i.pinimg.com/736x/a5/7f/79/a57f7940a24d9ddbbe2aa4e72f5c48f5.jpg">
+                            Laptop
+                        </td>
+                        <td>Electronics</td>
+                        <td>$1500</td>
+                        <td>300</td>
+                        <td>James Nest</td>
+                        <td class="status active">Active</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
-<!-- ===== HAMBURGER JS ===== -->
 <script>
+/* ===== HAMBURGER JS ===== */
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
 
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("menu");
-    
-    hamburger.onclick = () => {
+hamburger.addEventListener("click", function(e){
+    e.stopPropagation();
     menu.classList.toggle("show-menu");
-    };
-    
-    document.addEventListener("click", function(e){
-    
+});
+
+document.addEventListener("click", function(e){
     if(!menu.contains(e.target) && !hamburger.contains(e.target)){
-    menu.classList.remove("show-menu");
+        menu.classList.remove("show-menu");
     }
-    
-    });
+});
+
 </script>
 
 </body>
