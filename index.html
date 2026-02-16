@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="/landing-page.css">
-<title>IMS | Landing Page</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/landing-page.css">
+
+  <title>IMS | Landing Page</title>
 
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">IMS</div>
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-  <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#features">Features</a>
-    <a href="#info">Overview</a>
+  <nav>
+    <div class="logo">IMS</div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#info">Overview</a>
 
-    <div class="auth-buttons">
-      <a href="/SIgn-in-sign-up-page/login-logut-page.html" class="signin" id="hover-change">Sign In</a>
-      <a href="/SIgn-in-sign-up-page/login-logut-page.html" class="signup" id="signup">Sign Up</a>
+      <div class="auth-buttons">
+        <a href="/SIgn-in-sign-up-page/login-logut-page.html" class="signin" id="hover-change">Sign In</a>
+        <a href="/SIgn-in-sign-up-page/login-logut-page.html" class="signup" id="signup">Sign Up</a>
+      </div>
+
     </div>
   </nav>
 
-  </div>
+
 
 
 
@@ -90,8 +95,132 @@
   </div>
 </section>
 
-<footer>
-  <p>© 2026 IMS Management Platform</p>
+
+<!-- Hyperlinked Image Component -->
+<section class="dashboard-showcase">
+
+  <div class="dashboard-container">
+
+    <!-- Left Content -->
+    <div class="dashboard-content">
+      <h2>Industry Leading Standards</h2>
+
+      <p>Join thousands of businesses worldwide using StockMaster Pro.</p>
+
+      <!-- Hyperlinked Image -->
+      <a href="/Dashboard/dashboard.html" class="dashboard-link">
+        <img 
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000" 
+          alt="Warehouse Dashboard Preview"
+          class="dashboard-image"
+        >
+
+        <div class="dashboard-overlay">
+          <span class="dashboard-button">Open Dashboard</span>
+        </div>
+      </a>
+
+      <p class="dashboard-caption">
+        Click preview to access the system dashboard
+      </p>
+    </div>
+
+
+    <!-- Right Visual Rollover Image -->
+  <div class="dashboard-side">
+
+    <div class="rollover-container">
+      <img 
+        src="https://i.pinimg.com/736x/c5/a9/71/c5a97146cda2fe581aa83f9a1207b53b.jpg"
+        alt="Warehouse Overview"
+        class="rollover-image primary"
+      >
+
+      <img 
+        src="https://i.pinimg.com/1200x/05/50/44/0550446281929383a4c02f004571e527.jpg"
+        alt="Inventory Operations"
+        class="rollover-image secondary"
+      >
+
+      <!-- Floating badge (professional touch like your first file) -->
+      <div class="rollover-badge">
+        <strong>Live Monitoring</strong>
+        <span>Real-time updates</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+</section>
+
+<footer class="main-footer">
+
+  <div class="footer-container">
+
+    <!-- Brand / About -->
+    <div class="footer-col about">
+      <h3 class="footer-logo">IMS</h3>
+      <p>
+        Enterprise inventory management platform to monitor stock, suppliers,
+        and performance in real time with precision and control.
+      </p>
+
+      <!-- Newsletter -->
+      <form class="footer-newsletter">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <div class="quick-links">
+        <h4>Quick Links</h4>
+        <a href="/index.html">Home</a>
+        <a href="#features">Features</a>
+        <a href="#info">Overview</a>
+      </div>
+    </div>
+
+    <!-- Platform Features -->
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="#">Stock Monitoring</a>
+      <a href="#">Supplier Management</a>
+      <a href="#">Analytics & Reports</a>
+      <a href="#">Security & Access</a>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Email: group27inventoryproject@gmail.com</p>
+      <p>Phone: +233 (033) 123-4567</p>
+      <p>Mon — Fri | 8AM — 6PM</p>
+
+      <!-- Social Media Icons -->
+      <div class="footer-socials">
+        <a href="#" class="social-icon"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png"/></a>
+        <a href="#" class="social-icon"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png"/></a>
+        <a href="#" class="social-icon"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png"/></a>
+        <a href="#" class="social-icon"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png"/></a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Legal Links -->
+  <div class="footer-legal">
+    <p>
+      &copy; 2026 IMS Management Platform. All rights reserved. 
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </p>
+  </div>
+
 </footer>
 
 </body>
